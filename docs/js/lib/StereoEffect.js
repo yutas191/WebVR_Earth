@@ -57,8 +57,6 @@ THREE.StereoEffect = function ( renderer ) {
 
 		camera.matrixWorld.decompose( _position, _quaternion, _scale );
 
-		if(this.init == 0) {
-		this.init = 1;
 		// Stereo frustum calculation
 
 		// Effective fov of the camera
@@ -77,7 +75,8 @@ THREE.StereoEffect = function ( renderer ) {
 		_inner = _halfFocalWidth * 2.0 * _ndfl * _innerFactor;
 
 		// left
-
+		if(this.init == 0) {
+		this.init = 1;
 		_cameraL.projectionMatrix.makeFrustum(
 			-_outer,
 			_inner,
