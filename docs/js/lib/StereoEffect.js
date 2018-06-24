@@ -34,8 +34,6 @@ THREE.StereoEffect = function ( renderer ) {
 	var _ndfl, _halfFocalWidth, _halfFocalHeight;
 	var _innerFactor, _outerFactor;
 
-	this.init = 0;
-
 	// initialization
 
 	renderer.autoClear = false;
@@ -75,8 +73,6 @@ THREE.StereoEffect = function ( renderer ) {
 		_inner = _halfFocalWidth * 2.0 * _ndfl * _innerFactor;
 
 		// left
-		if(this.init == 0) {
-		this.init = 1;
 		_cameraL.projectionMatrix.makeFrustum(
 			-_outer,
 			_inner,
@@ -96,7 +92,6 @@ THREE.StereoEffect = function ( renderer ) {
 			camera.near,
 			camera.far
 		);
-		}
 
 		_cameraL.position.copy( _position );
 		_cameraL.quaternion.copy( _quaternion );
