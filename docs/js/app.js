@@ -47,7 +47,7 @@ class App {
 	update(dt) {
 		this.meshCloud.rotation.y += dt * 0.1
 		this.meshEarth.rotation.y += dt * 0.2
-        this.sceneCenter.rotation.y += dt * 0.5;
+		this.sceneCenter.rotation.y += dt * 0.5;
 	}
 
 	render(dt) {
